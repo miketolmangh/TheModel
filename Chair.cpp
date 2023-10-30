@@ -8,16 +8,6 @@
 
 #include "Chair.hpp"
 
-Chair::Chair() :
-    m_ptrWorld(0)
+Chair::Chair()
 {
-}
-
-void Chair::newWorld(World* world)
-{
-    if (m_ptrWorld != 0)
-    {
-        delete m_ptrWorld;
-        m_ptrWorld = new World();
-    }
 }

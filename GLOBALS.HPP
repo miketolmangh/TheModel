@@ -12,6 +12,7 @@
 #include "Caz.hpp"
 #include "JohnFoster.hpp"
 #include "SoulCollective.hpp"
+#include "Universe.hpp"
 
 static Mike* glblMike;
 static Caz* glblCaz;

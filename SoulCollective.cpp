@@ -12,12 +12,11 @@
 #include "CazSoul.hpp"
 #include "JohnFosterSoul.hpp"
 #include "God.hpp"
-#include "World.hpp"
 #include <unistd.h>
 
-SoulCollective::SoulCollective()
+SoulCollective::SoulCollective(Universe* pUniverse) :
+	m_pUniverse(pUniverse)
 {
-    World* world;
     for (int i = 0; i < I_MAX_HUMANS; i++)
     {
         if (i == 0)
@@ -38,9 +37,7 @@ SoulCollective::SoulCollective()
         }
         m_ptrChairs[i] = new Chair;
         m_ptrChairs[i]->sit(m_ptrSouls[i]);
-        world = new World();
- 
-        m_ptrChairs[i]->newWorld(world);
+
     }
     m_ptrSouls[0]->attatchAvatar((Human*) &glblMike);
     m_ptrSouls[1]->attatchAvatar((Human*) &glblCaz);
@@ -61,6 +58,7 @@ void SoulCollective::startScheduler()
         for (int i = 0; i < I_MAX_HUMANS; i++)
         {
             m_ptrSouls[i]->beatMaybe();
+            m_pUniverse->BigCollapseMaybe();
         }
     }
 }

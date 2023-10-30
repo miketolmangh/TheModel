@@ -7,12 +7,18 @@
 
 #ifndef UNIVERSE_HPP_
 #define UNIVERSE_HPP_
+#include "OldUniverse.hpp"
 
 class Universe
 {
+private:
+    OldUniverse m_OldUniverse;
+   
 public:
 	Universe() {}
 	~Universe() {}
+    virtual void beatMaybe() {}
+    void BigCollapseMaybe(){ m_OldUniverse.BigCollapseMaybe(); }
 };
 
 #endif /* UNIVERSE_HPP_ */

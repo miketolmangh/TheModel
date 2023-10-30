@@ -11,18 +11,20 @@
 #include "Soul.hpp"
 #include "Chair.hpp"
 #include "SoulRelation.hpp"
+#include "Universe.hpp"
 
 class SoulCollective
 {
 private:
 	SoulRelation* m_SoulRelation;
+	Universe* m_pUniverse;
 
 private:
 	Chair* m_ptrChairs[I_MAX_HUMANS];
 	Soul* m_ptrSouls[I_MAX_HUMANS];
 
 public:
-	SoulCollective();
+	SoulCollective(Universe*);
 	~SoulCollective();
     void startScheduler();
 };

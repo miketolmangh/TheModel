@@ -14,12 +14,12 @@ class God
 {
 private:
     Universe m_universe;
-    SoulCollective m_soulCollective;
+    SoulCollective* m_pSoulCollective;
 
 public:
 	God();
-	~God() {}
-    void startScheduler() { m_soulCollective.startScheduler(); }
+	~God();
+    void startScheduler() { m_pSoulCollective->startScheduler(); }
     static void modellog(char*, bool newline = false, bool timestamp = true);
 };
 #endif /* GOD_HPP_ */
