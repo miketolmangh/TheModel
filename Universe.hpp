@@ -19,6 +19,7 @@ public:
 	~Universe() {}
     virtual void beatMaybe() {}
     void BigCollapseMaybe(){ m_OldUniverse.BigCollapseMaybe(); }
+    OldUniverse* getOldUniverse() { return &m_OldUniverse; }
 };
 
 #endif /* UNIVERSE_HPP_ */

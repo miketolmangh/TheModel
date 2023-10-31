@@ -17,6 +17,8 @@
 SoulCollective::SoulCollective(Universe* pUniverse) :
 	m_pUniverse(pUniverse)
 {
+    m_pOldUniverse = m_pUniverse->getOldUniverse();
+    
     for (int i = 0; i < I_MAX_HUMANS; i++)
     {
         if (i == 0)

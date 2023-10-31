@@ -12,12 +12,14 @@
 #include "Chair.hpp"
 #include "SoulRelation.hpp"
 #include "Universe.hpp"
+#include "OldUniverse.hpp"
 
 class SoulCollective
 {
 private:
 	SoulRelation* m_SoulRelation;
 	Universe* m_pUniverse;
+    OldUniverse* m_pOldUniverse;
 
 private:
 	Chair* m_ptrChairs[I_MAX_HUMANS];
